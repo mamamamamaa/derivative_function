@@ -15,39 +15,36 @@ public class AnalyticalTool {
         double from, to, step;
         int choice;
         while (!exit) {
-            System.out.println("\n1. Функция с параметром");
-            System.out.println("2. Функция без параметра");
-            System.out.println("3. Выход");
+            System.out.println("\n1. Функція з параметром");
+            System.out.println("2. Функція без параметра");
+            System.out.print("Вибір: ");
             choice = scanInteger();
             switch (choice) {
                 case 1:
-                    System.out.println("Введите нужную функцию: ");
+                    System.out.println("Введіть функцію: ");
                     func = scanLine();
                     do{
-                        System.out.println("От:");
+                        System.out.println("Від:");
                         from = scanDouble();
                         System.out.println("До:");
                         to = scanDouble();
                     } while (from >= to);
-                    System.out.println("Шаг: ");
+                    System.out.println("Крок: ");
                     step = scanDouble();
                     withParam(func, from, to, step);
                     break;
                 case 2:
-                    System.out.println("Введите нужную функцию: ");
+                    System.out.println("Введіть функцію: ");
                     func = scanLine();
                     do{
-                        System.out.println("От:");
+                        System.out.println("Від:");
                         from = scanDouble();
                         System.out.println("До:");
                         to = scanDouble();
                     } while (from >= to);
-                    System.out.println("Шаг: ");
+                    System.out.println("Крок: ");
                     step = scanDouble();
                     withoutParam(func, from, to, step);
-                    break;
-                case 3:
-                    exit = true;
                     break;
                 default:
                     System.out.println("Error");
@@ -57,7 +54,7 @@ public class AnalyticalTool {
     public static void withParam(String funStr, double from, double to, double step)
     {
         Parser parser = new Parser(Parser.STANDARD_FUNCTIONS);
-        System.out.println("1. Функция с параметром");
+        System.out.println("1. Функція с параметром");
         Variable par = new Variable("a");
         Variable var = new Variable("x");
         parser.add(var);
@@ -75,7 +72,7 @@ public class AnalyticalTool {
     public static void withoutParam(String funStr, double from, double to, double
             step) {
         Parser parser = new Parser(Parser.STANDARD_FUNCTIONS);
-        System.out.println("2. Функция без параметра");
+        System.out.println("2. Функція без параметра");
         Variable var = new Variable("x");
         parser.add(var);
         edu.hws.jcm.data.ExpressionProgram funs = parser.parse(funStr);

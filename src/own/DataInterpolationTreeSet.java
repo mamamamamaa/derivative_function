@@ -4,7 +4,6 @@ import consoleTasks.Interpolator;
 import consoleTasks.Point2D;
 import java.util.Iterator;
 import java.util.TreeSet;
-//public class TreeSetInterpolation extends Interpolator {
 public class DataInterpolationTreeSet extends Interpolator {
     private TreeSet<Point2D> data = new TreeSet<>();
     public DataInterpolationTreeSet(TreeSet<Point2D> data) {

@@ -1,11 +1,12 @@
 package own;
 
 import consoleTasks.Point2D;
+
 import java.io.*;
-import java.util.Scanner;
-import java.util.StringTokenizer;
-public class FileDataInterpolationTreeSet extends DataInterpolationTreeSet {
-    public FileDataInterpolationTreeSet() {
+import java.util.*;
+
+public class FileDataInterpolationTreeMap extends DataInterpolationTreeMap {
+    public FileDataInterpolationTreeMap() {
         super();
     }
     public void readFromFile(String fileName) throws IOException {
@@ -33,7 +34,7 @@ public class FileDataInterpolationTreeSet extends DataInterpolationTreeSet {
         out.close();
     }
     public static void main(String[] args) {
-        FileDataInterpolationTreeSet fun = new FileDataInterpolationTreeSet();
+        FileDataInterpolationTreeMap fun = new FileDataInterpolationTreeMap();
         int num;
         double x;
         Scanner in = new Scanner(System.in);
@@ -60,7 +61,7 @@ public class FileDataInterpolationTreeSet extends DataInterpolationTreeSet {
                 fun.getPoint(fun.numPoints() - 1).getX());
         System.out.println("Зберігаємо у файл");
         try {
-            fun.writeToFile("dataTreeSet.dat");
+            fun.writeToFile("dataTreeMap.dat");
         } catch (IOException ex) {
             ex.printStackTrace();
             System.exit(-1);
@@ -68,7 +69,7 @@ public class FileDataInterpolationTreeSet extends DataInterpolationTreeSet {
         System.out.println("Зчитуємо з файла");
         fun.clear();
         try {
-            fun.readFromFile("dataTreeSet.dat");
+            fun.readFromFile("dataTreeMap.dat");
         } catch (IOException ex) {
             ex.printStackTrace();
             System.exit(-1);
@@ -92,7 +93,7 @@ public class FileDataInterpolationTreeSet extends DataInterpolationTreeSet {
             fun.addPoint(new Point2D(x, Math.sin(x)));
         }
         try {
-            fun.writeToFile("TblFuncTreeSet.dat");
+            fun.writeToFile("TblFuncTreeMap.dat");
         } catch (IOException ex) {
             ex.printStackTrace();
             System.exit(-1);
