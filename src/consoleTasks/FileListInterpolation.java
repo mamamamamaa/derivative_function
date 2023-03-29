@@ -8,7 +8,7 @@ public class FileListInterpolation extends ListInterpolation {
     }
     public void readFromFile(String fileName) throws IOException {
         BufferedReader in = new BufferedReader(new FileReader(fileName));
-        String s = in.readLine(); // читання рядка із заголовками стовпців
+        String s = in.readLine();
         clear();
         while ((s = in.readLine()) != null) {
             StringTokenizer st = new StringTokenizer(s);
