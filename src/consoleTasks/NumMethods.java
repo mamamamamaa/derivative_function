@@ -54,7 +54,6 @@ public class NumMethods {
      * @param args
      */
     public static void main(String[] args) {
-// Перевірка методу розв'язування рівняння
         double resEq1, resEq2;
         resEq1 = NumMethods.findRoot(1.0, 1.0e-7,
                 new Evaluatable() {
@@ -68,7 +67,6 @@ public class NumMethods {
         );
         System.out.println("Перший корінь: " + resEq1 +
                 "\nДругий корінь: " + resEq2);
-// Перевірка методу диференціювання
         ListInterpolation fun = new ListInterpolation();
         int num;
         double x = -0.5*Math.PI;
