@@ -22,7 +22,6 @@ public class LeftHand implements Evaluatable {
     }
 
     public static void main(String[] args) throws IOException {
-// Перевірка методу розв'язування рівняння
         LeftHand fun = new LeftHand();
         java.util.Scanner in = new java.util.Scanner(System.in);
         System.out.print("a: ");
